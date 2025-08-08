@@ -3,9 +3,9 @@ dotenv.config();
 const express = require("express");
 const app = express();
 require("./db.js");
-const productRoute = require("./Routes/productRoute.js")
-const orderRoute = require("./Routes/orderRoutes.js")
-const userRoute = require("./Routes/userRoutes.js")
+const productRoute = require("./routes/productRoute.js")
+const orderRoute = require("./routes/orderRoutes.js")
+const userRoute = require("./routes/userRoutes.js")
 const cors = require("cors");
 
 
