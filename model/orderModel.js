@@ -1,25 +1,13 @@
 const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
-  totalAmount: {
-    type: Number,
-  },
-  contactNumber: {
-    type: String,
-  },
-  items: {
-    type: [
-      {
-        itemName: {
-          type: String,
-        },
-        quantity: {
-          type: String,
-        },
-      },
-    ],
+  userName: {
+    type: String, 
   },
   cName: {
+    type: String,
+  },
+  contactNumber: {
     type: String,
   },
   city: {
@@ -28,14 +16,23 @@ const orderSchema = new mongoose.Schema({
   street: {
     type: String,
   },
+  deliveryDescription: {
+    type: String,
+  },
+  totalAmount: {
+    type: Number,
+  },
+  items: [
+    {
+      itemName: { type: String },
+      quantity: { type: String },
+    },
+  ],
   status: {
     type: String,
     default: "Pending",
   },
-  deliveryDescription: {
-    type: String,
-  },
-});
+}, { timestamps: true });
 
 const Order = mongoose.model("Order", orderSchema);
 module.exports = Order;
